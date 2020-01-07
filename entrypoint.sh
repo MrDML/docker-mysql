@@ -64,7 +64,7 @@ remove_debian_system_maint_password() {
 
 initialize_mysql_database() {
   # initialize MySQL data directory
-  if [ ! -d ${MYSQL_DATA_DIR}/mysql ]; then
+  if [ -d ${MYSQL_DATA_DIR} ]; then
     echo "Installing database..."
     mysqld --initialize-insecure --user=mysql >/dev/null 2>&1
 
